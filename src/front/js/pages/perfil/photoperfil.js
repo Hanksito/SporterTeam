@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../../store/appContext";
-import "/workspace/SporterTeam/src/front/styles/photoperfil.css";
+import "../../../styles/photoperfil.css";
 // import cloudinary from "cloudinary/lib/cloudinary";
 
 export const Photoperfil = (props) => {
