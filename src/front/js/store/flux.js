@@ -1,4 +1,3 @@
-import { element } from "prop-types";
 import swal from "sweetalert";
 
 const getState = ({ getStore, getActions, setStore }) => {
@@ -7,7 +6,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       userDataEventos: [],
       token: "",
       imagen:
-        "" ??
         "https://img.freepik.com/vector-premium/perfil-hombre-dibujos-animados_18591-58482.jpg?w=200",
       respuesta: "",
       validacion: false,
@@ -84,10 +82,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             );
 
             sessionStorage.setItem(getStore().eventosFilter[x].id, text);
-
-            // sessionStorage.setItem("token", respuestajson.access_token);
-
-            // Object.assign(getStore().eventos[x], { "jugadorDelEvento": text })
           }
         }
       },
