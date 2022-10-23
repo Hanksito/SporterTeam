@@ -65,7 +65,7 @@ export const Home = () => {
                     setEvent({ ...event, sport: e.target.value });
                   }}
                 >
-                  <option>cualquiera</option>
+                  <option>Cualquiera</option>
                   <option>Baloncesto</option>
                   <option>Fútbol</option>
                   <option>Padel</option>
