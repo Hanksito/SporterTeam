@@ -20,45 +20,32 @@ export const DetallesEvento = () => {
     actions.look_event(params.theid);
     actions.get_player_event(params.theid);
     actions.DatosUsuarioLogeado();
-  }, [
-    // store.jugadores
-  ]);
+  }, []);
 
-  // useEffect(() => {
-  //   actions.look_event(params.theid);
-  //   actions.get_player_event(params.theid);
-
-  // }, [
-  //   // store.jugadores
-  // ]);
+  //
   const color =
     detalles.estadoEvento == "Abierto" || detalles.estadoEvento == "Cerrado"
       ? { color: "green" }
       : { color: "red" };
   const columna = detalles.admin == user.id ? "col-lg-4" : "col-6";
 
-  // const estadoEvento =
-  //   players.length == estado.participantmax && estado.estadoEvento == "Abierto"
-  //   ?store.estado.estadoEvento == "Cerrado"
-  //   :
-
-
-  if (players.length == detalles.participantmax && detalles.estadoEvento == "Abierto") {
-    detalles.estadoEvento = "Cerrado"
-    actions.look_event(params.theid)
-    actions.modificarevento(detalles, detalles.id)
-    console.log("antes de esto hay una funcion retrasado")
-  }
-  else if (players.length != detalles.participantmax && detalles.estadoEvento != "Abierto") {
-    detalles.estadoEvento = "Abierto"
+  if (
+    players.length == detalles.participantmax &&
+    detalles.estadoEvento == "Abierto"
+  ) {
+    detalles.estadoEvento = "Cerrado";
+    actions.look_event(params.theid);
+    actions.modificarevento(detalles, detalles.id);
+    console.log("antes de esto hay una funcion retrasado");
+  } else if (
+    players.length != detalles.participantmax &&
+    detalles.estadoEvento != "Abierto"
+  ) {
+    detalles.estadoEvento = "Abierto";
     actions.look_event(params.theid),
-      actions.modificarevento(detalles, detalles.id)
-    console.log("antes de esto hay una funcion retrasado")
-
-  } else console.log("esto no va")
-
-
-
+      actions.modificarevento(detalles, detalles.id);
+    console.log("antes de esto hay una funcion retrasado");
+  } else console.log("esto no va");
 
   return (
     <div id="bgdetalles">
@@ -158,7 +145,10 @@ export const DetallesEvento = () => {
               <div className="row bg-white rounded p-2">
                 <div className="col-lg-6 text-center rounded">
                   {Array.from(players).map((element, index) => {
-                    const changecoloradmin = element.id == detalles.admin ? { color: "green" } : { color: "dark" }
+                    const changecoloradmin =
+                      element.id == detalles.admin
+                        ? { color: "green" }
+                        : { color: "dark" };
 
                     if (index % 2 != 0) {
                       return (
@@ -189,7 +179,10 @@ export const DetallesEvento = () => {
 
                 <div className="col-lg-6 text-center  rounded">
                   {Array.from(players).map((element, index) => {
-                    const changecoloradmin = element.id == detalles.admin ? { color: "green", fontWeight: "bold" } : { color: "black" }
+                    const changecoloradmin =
+                      element.id == detalles.admin
+                        ? { color: "green", fontWeight: "bold" }
+                        : { color: "black" };
 
                     if (index % 2 == 0) {
                       return (
