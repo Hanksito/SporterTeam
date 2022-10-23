@@ -531,9 +531,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (fecha > newFecha && evento.estadoEvento != "Finalizado") {
           evento.estadoEvento = "Finalizado";
           getActions().modificarevento(evento, evento.id);
-          console.log("esta pasado de fecha", evento);
-        } else {
-          console.log("todo ok", evento);
         }
       },
     },

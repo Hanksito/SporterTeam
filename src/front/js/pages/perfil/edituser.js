@@ -44,7 +44,6 @@ export const EditUser = () => {
   } = useForm();
 
   const onSubmit = (userInfo) => {
-    console.log(userInfo);
     actions.editUser(
       userInfo.new_email,
       userInfo.new_username,
