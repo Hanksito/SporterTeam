@@ -15,14 +15,11 @@ export const Home = () => {
     (element) => element.estadoEvento !== "Cerrado"
   );
 
-
   const ciudad = store.ciudades;
-
 
   useEffect(() => {
     actions.getEventos();
     actions.eventosparticipantes();
-
   }, []);
 
   // console.log(todosloseventos)
@@ -68,11 +65,11 @@ export const Home = () => {
                     setEvent({ ...event, sport: e.target.value });
                   }}
                 >
+                  <option>cualquiera</option>
                   <option>Baloncesto</option>
                   <option>Fútbol</option>
                   <option>Padel</option>
                   <option>Tenis</option>
-                  <option>cualquiera</option>;
                 </select>
               </div>
             </div>
@@ -283,8 +280,9 @@ export const Home = () => {
                           {event.duration} {"minutos"}
                         </td>
                         <td>
-                          {sessionStorage.getItem(event.id)}
-                          /{event.participantmax}{" personas"}
+                          {sessionStorage.getItem(event.id)}/
+                          {event.participantmax}
+                          {" personas"}
                         </td>
                         <td>
                           {event.agemin} {"años"}
