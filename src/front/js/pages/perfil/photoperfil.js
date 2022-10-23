@@ -60,7 +60,11 @@ export const Photoperfil = (props) => {
         >
           <img
             className="rounded-circle img-fluid"
-            src={store.imagen}
+            src={
+              store.imagen
+                ? store.imagen
+                : "https://img.freepik.com/vector-premium/perfil-hombre-dibujos-animados_18591-58482.jpg?w=200"
+            }
             style={{ width: "200px", height: "200px", objectFit: "cover" }}
           />
         </div>

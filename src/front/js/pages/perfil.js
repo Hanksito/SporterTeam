@@ -48,7 +48,11 @@ export const Perfil = () => {
                 <div className="card-body pt-0 ">
                   <div className="d-flex flex-column align-items-center text-center">
                     <img
-                      src={store.imagen}
+                      src={
+                        store.imagen
+                          ? store.imagen
+                          : "https://img.freepik.com/vector-premium/perfil-hombre-dibujos-animados_18591-58482.jpg?w=200"
+                      }
                       alt="Admin"
                       className="rounded-circle fluid"
                       id="estiloperfil"
