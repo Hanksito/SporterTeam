@@ -21,7 +21,11 @@ export const Photoperfil = (props) => {
     };
     fetch(process.env.BACKEND_URL + "/api/upload", options)
       .then((resp) => resp.json())
-      .then((data) => actions.LoadImage(data));
+
+      .then((data) => {
+        console.log(data);
+        actions.LoadImage(data);
+      });
     actions
       .getrespuesta("")
       .catch((error) => console.error("ERRORRRR!!!", error));
@@ -45,7 +49,6 @@ export const Photoperfil = (props) => {
   };
   return (
     <div id="fotoEditUser" className="fotodeusuario">
-      {/* <form onSubmit={upLoadImage}> */}
       <div className="row px-0 mx-1 my-3 mb-0 ">
         <div
           className="p-0"
@@ -84,9 +87,6 @@ export const Photoperfil = (props) => {
           }}
         />
       </div>
-      {/* <button onClick={(e) => { upLoadImage(e) }}>Cargar</button> */}
-      {/* <button >Poner de perfil</button> */}
-      {/* </form> */}
     </div>
   );
 };

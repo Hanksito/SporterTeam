@@ -45,7 +45,6 @@ export const EditUser = () => {
 
   const onSubmit = (userInfo) => {
     console.log(userInfo);
-    actions.generarnuevotoken();
     actions.editUser(
       userInfo.new_email,
       userInfo.new_username,
