@@ -19,7 +19,11 @@ export const Navbarnew = () => {
             <img
               id="imagenPerfilNavbar"
               className="img-fluid rounded-circle my-1"
-              src={store.imagen}
+              src={
+                store.imagen
+                  ? store.imagen
+                  : "https://img.freepik.com/vector-premium/perfil-hombre-dibujos-animados_18591-58482.jpg?w=200"
+              }
             ></img>
           </Link>
         </Navbar.Brand>
@@ -52,9 +56,9 @@ export const Navbarnew = () => {
               actions.logout();
             }}
           >
-            <img src="https://themayanagari.com/wp-content/uploads/2021/04/Exit-Button-Png-Icon-Transparent.png"
+            <img
+              src="https://themayanagari.com/wp-content/uploads/2021/04/Exit-Button-Png-Icon-Transparent.png"
               className="img-fluid rounded-circle my-1 float-end"
-
               id="imagenExitNavbar"
             />
 
