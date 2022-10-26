@@ -470,6 +470,10 @@ const getState = ({ getStore, getActions, setStore }) => {
         }).then((respuestadelback) => {
           if (respuestadelback.status == 200) {
             getActions().look_event(eventid);
+            swal("Pachanga actualizada.", {
+              icon: "success",
+              timer: 4000,
+            });
           }
         });
       },
